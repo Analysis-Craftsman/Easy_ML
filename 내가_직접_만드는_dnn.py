@@ -151,7 +151,6 @@ net.add(FCLayer(50, 10))                    # input_shape=(1, 50)       ;   outp
 net.add(ActivationLayer(tanh, tanh_prime))
 
 # train on 1000 samples
-# as we didn't implemented mini-batch GD, training will be pretty slow if we update at each iteration on 60000 samples...
 net.use(mse, mse_prime)
 net.fit(x_train[0:1000], y_train[0:1000], epochs=40, learning_rate=0.1)
 
